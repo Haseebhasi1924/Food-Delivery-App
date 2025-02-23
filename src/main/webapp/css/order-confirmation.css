@@ -1,0 +1,194 @@
+/* Main Container Styles */
+.confirmation-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #fff5f2 0%, #ffe5e0 100%);
+    padding: 2rem;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.confirmation-box {
+    background: white;
+    border-radius: 25px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(255, 90, 31, 0.1);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    animation: slideUp 0.6s ease-out;
+}
+
+/* Image Styles */
+.delivery-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: -80px auto 2rem;
+    border: 8px solid white;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery-image:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography Styles */
+h1 {
+    color: #ff5a1f;
+    font-size: 2.8rem;
+    margin: 0 0 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(255, 90, 31, 0.1);
+}
+
+.message {
+    font-size: 1.4rem;
+    color: #4a5568;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Order Information Styles */
+.order-info {
+    background: linear-gradient(135deg, #fff8f6 0%, #fff2ef 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+    border: 2px dashed rgba(255, 90, 31, 0.2);
+    position: relative;
+}
+
+.order-info::before {
+    content: '🛵';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background: white;
+    padding: 0 1rem;
+    border-radius: 50%;
+}
+
+.order-info p {
+    color: #2d3748;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.order-info p:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Back to Home Button Styles */
+.back-home {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #ff5a1f 0%, #ff4400 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 90, 31, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.back-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 90, 31, 0.3);
+    background: linear-gradient(135deg, #ff4400 0%, #ff5a1f 100%);
+}
+
+.back-home:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 15px rgba(255, 90, 31, 0.2);
+}
+
+/* Animation Keyframes */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .confirmation-container {
+        padding: 1rem;
+    }
+
+    .confirmation-box {
+        padding: 2rem;
+        margin-top: 60px;
+    }
+
+    .delivery-image {
+        width: 200px;
+        height: 200px;
+        margin-top: -60px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .message {
+        font-size: 1.2rem;
+    }
+
+    .order-info {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .confirmation-box {
+        padding: 1.5rem;
+    }
+
+    .delivery-image {
+        width: 160px;
+        height: 160px;
+        margin-top: -50px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .message {
+        font-size: 1.1rem;
+    }
+
+    .order-info p {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .back-home {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}

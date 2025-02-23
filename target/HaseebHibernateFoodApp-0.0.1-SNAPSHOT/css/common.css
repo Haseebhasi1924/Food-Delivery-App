@@ -1,0 +1,464 @@
+/* Base Variables */
+:root {
+    --primary: #fc8019;
+    --primary-dark: #e67215;
+    --secondary: #282c3f;
+    --success: #48c479;
+    --danger: #ff5252;
+    --warning: #ffb100;
+    --light: #f8f9fa;
+    --dark: #1a1a1a;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    background-color: var(--light);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--primary);
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background-color: var(--gray-100);
+    transform: translateY(-2px);
+}
+
+.logo i {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover i {
+    transform: rotate(20deg);
+}
+
+/* Navigation Items */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    background-color: transparent;
+}
+
+.nav-item:hover {
+    background-color: #fff3e0;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(252, 128, 25, 0.1);
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--primary);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(252, 128, 25, 0.3);
+}
+
+.nav-item:hover .cart-count {
+    transform: scale(1.15) translateY(-2px);
+    background-color: var(--primary-dark);
+}
+
+/* Icon Styling */
+.nav-item i {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    color: var(--secondary);
+}
+
+/* Icon Animation on Hover */
+.nav-item:hover i {
+    transform: translateY(-2px) scale(1.1);
+    color: var(--primary);
+}
+
+/* Login/Logout Button Special Styling */
+.nav-item:last-child {
+    background-color: #fff3e0;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Login/Logout Button Hover */
+.nav-item:last-child:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(252, 128, 25, 0.2);
+}
+
+.nav-item:last-child:hover i {
+    color: white;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* Common utility classes */
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.quantity {
+    color: #666;
+    margin-left: 10px;
+}
+
+.total-section {
+    margin-top: 20px;
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+.subtotal, .delivery, .total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.order-button {
+    width: 100%;
+    padding: 10px;
+    background: #fc8019;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+@media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .nav-right {
+        gap: 1rem;
+    }
+    
+    .nav-item {
+        padding: 0.8rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* Restaurant Page Specific Nav Styles */
+.restaurant-nav .nav-item {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.restaurant-nav .nav-item:hover {
+    background-color: var(--gray-100);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Cart Button in Restaurant Page */
+.restaurant-nav .cart-icon {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.restaurant-nav .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.restaurant-nav .nav-item:hover .cart-count {
+    transform: scale(1.1);
+}
+
+/* Login/Profile Button in Restaurant Page */
+.restaurant-nav .nav-item:last-child {
+    background-color: var(--gray-100);
+    border: 2px solid transparent;
+}
+
+.restaurant-nav .nav-item:last-child:hover {
+    border-color: var(--primary);
+    background-color: white;
+}
+
+/* Icon Animations in Restaurant Page */
+.restaurant-nav .nav-item i {
+    transition: transform 0.3s ease;
+}
+
+.restaurant-nav .nav-item:hover i {
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .restaurant-nav {
+        gap: 0.8rem;
+    }
+    
+    .restaurant-nav .nav-item {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Cuisine Tags Container */
+.popular-cuisines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+/* Base Cuisine Tag Style */
+.cuisine-tag {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 120px;
+}
+
+/* Specific Colors for Each Cuisine */
+.cuisine-tag:nth-of-type(1) { /* Pizza */
+    background-color: #ffe8e8;
+    color: #d32f2f;
+    border: 2px solid #ffcdd2;
+    cursor: default;
+}
+
+.cuisine-tag:nth-of-type(2) { /* Burgers */
+    background-color: #fff4e5;
+    color: #e65100;
+    border: 2px solid #ffe0b2;
+    cursor: default;
+}
+
+.cuisine-tag:nth-of-type(3) { /* Chinese */
+    background-color: #e8f6e9;
+    color: #2e7d32;
+    border: 2px solid #c8e6c9;
+    cursor: default;
+}
+
+.cuisine-tag:nth-of-type(4) { /* South Indian */
+    background-color: #e1f5fe;
+    color: #0277bd;
+    border: 2px solid #b3e5fc;
+    cursor: default;
+}
+
+.cuisine-tag:nth-of-type(5) { /* North Indian */
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    border: 2px solid #e1bee7;
+    cursor: default;
+}
+
+.cuisine-tag:nth-of-type(6) { /* Biryani */
+    background-color: #fff8e1;
+    color: #ff8f00;
+    border: 2px solid #ffe082;
+    cursor: default;
+}
+
+/* Hover Effect */
+.cuisine-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .popular-cuisines {
+        gap: 1rem;
+    }
+    
+    .cuisine-tag {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1rem;
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .popular-cuisines {
+        gap: 0.8rem;
+    }
+    
+    .cuisine-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        min-width: 90px;
+    }
+} 

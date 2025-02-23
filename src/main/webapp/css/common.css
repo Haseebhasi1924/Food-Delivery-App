@@ -1,0 +1,191 @@
+/* Base Variables */
+:root {
+    --primary: #fc8019;
+    --primary-dark: #e67215;
+    --secondary: #282c3f;
+    --success: #48c479;
+    --danger: #ff5252;
+    --warning: #ffb100;
+    --light: #f8f9fa;
+    --dark: #1a1a1a;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    background-color: var(--light);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--primary);
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background-color: var(--gray-100);
+    transform: translateY(-2px);
+}
+
+.logo i {
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+
+.logo:hover i {
+    transform: rotate(20deg);
+}
+
+/* Navigation Items */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    background-color: transparent;
+}
+
+.nav-item:hover {
+    background-color: #fff3e0;
+    color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(252, 128, 25, 0.1);
+}
+
+/* Cart Icon Styling */
+.cart-icon {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--primary);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(252, 128, 25, 0.3);
+}
+
+.nav-item:hover .cart-count {
+    transform: scale(1.15) translateY(-2px);
+    background-color: var(--primary-dark);
+}
+
+/* Icon Styling */
+.nav-item i {
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    color: var(--secondary);
+}
+
+/* Icon Animation on Hover */
+.nav-item:hover i {
+    transform: translateY(-2px) scale(1.1);
+    color: var(--primary);
+}
+
+/* Login/Logout Button Special Styling */
+.nav-item:last-child {
+    background-color: #fff3e0;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Login/Logout Button Hover */
+.nav-item:last-child:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(252, 128, 25, 0.2);
+}
+
+.nav-item:last-child:hover i {
+    color: white;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.text-center { text-align: center; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* Footer */
+.footer {
+    margin-top: 64px;
+    background-color: var(--secondary);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
